@@ -16,9 +16,9 @@ email = testdata.get("user_email")
 contact = testdata.get("content_contact")
 
 
-def test_step1(browser):
+def test_step1(browsser):
     logging.info("Test1 Starting")
-    testpage = OperationHelper(browser)
+    testpage = OperationHelper(browsser)
     testpage.go_to_site()
     testpage.enter_login("test")
     testpage.enter_pass("test")
@@ -26,9 +26,9 @@ def test_step1(browser):
     assert testpage.get_error_text() == "401", "Test FAILED!"
 
 
-def test_step2(browser):
+def test_step2(browsser):
     logging.info("Test2 Starting")
-    testpage = OperationHelper(browser)
+    testpage = OperationHelper(browsser)
     testpage.go_to_site()
     testpage.enter_login(name)
     testpage.enter_pass(pswd)
@@ -36,9 +36,9 @@ def test_step2(browser):
     assert testpage.get_user_text() == f"Hello, {name}", "Test FAILED!"
 
 
-def test_step3(browser):
+def test_step3(browsser):
     logging.info("Test3 Stsrting")
-    testpage = OperationHelper(browser)
+    testpage = OperationHelper(browsser)
     testpage.click_new_post_btn()
     testpage.enter_title(title)
     testpage.enter_description(description)
@@ -48,10 +48,10 @@ def test_step3(browser):
     assert testpage.get_res_text() == title, "Test FAILED!"
 
 
-def test_step4(browser):
+def test_step4(browsser):
     # test contact us
     logging.info("Test Contact_us Starting")
-    testpage = OperationHelper(browser)
+    testpage = OperationHelper(browsser)
     testpage.click_contact_link()
     testpage.enter_contact_name(user)
     testpage.enter_contact_email(email)
