@@ -7,7 +7,7 @@ import time
 
 class TestSearchLocators:
     ids = dict()
-    with open("./locators.yaml", encoding="utf-8") as f:
+    with open("C:/Users/Mi/PycharmProjects/Autotest_Python/Home_Work4/locator.yaml", encoding="utf-8") as f:
         locators = yaml.safe_load(f)
 
     for locator in locators["xpath"].keys():
@@ -136,3 +136,7 @@ class OperationHelper(BasePage):
         txt = self.get_alert_txt()
         logging.info(f"Alert message is {txt}")
         return txt
+
+
+class OperationsHelper:
+    pass
